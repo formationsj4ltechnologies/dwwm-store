@@ -1,12 +1,47 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>DWWM - {% block title %}{% endblock %}</title>
+
+    {% block stylesheets %}
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="{{ asset('assets/images/favicon.svg') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/all.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    {% endblock %}
+</head>
+<body class="js">
+
+{% block body %}
+    {# Preloader #}
+    {{ include('partials/_preloader.html.twig') }}
+    {# Fin Preloader #}
+
+    {# Header #}
+    {{ include('partials/_header.html.twig') }}
+    {# Fin Header #}
+
+    {# Slider #}
+    {{ include('partials/_slider.html.twig') }}
+    {# Fin Slider #}
+
+    {# Small Banner #}
+    {{ include('partials/_small_banner.html.twig') }}
+    {# Fin Small Banner #}
+
+    {# Produits #}
+    {{ include('partials/_produits.html.twig') }}
+    {# Fin Produits #}
+
+    {# Midium Banner #}
+    {{ include('partials/_midium_banner.html.twig') }}
+    {# Fin Midium Banner #}
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/all.js') }}" defer></script>
+{% endblock %}
+</body>
 </html>
