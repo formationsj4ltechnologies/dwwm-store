@@ -3,3 +3,31 @@
     background-color: #efebe9;
   }
 }
+
+.contact-us {
+  .form-main {
+    padding: 0;
+
+    h4 {
+      padding: 2rem 0;
+      background: #212121;
+      color: white;
+      text-transform: uppercase;
+    }
+
+    form {
+      padding: 1rem 3rem 2rem;
+    }
+  }
+}
+
+.contact-head {
+  .alert {
+    border-radius: 0;
+  }
+
+  .alert-danger {
+    //background-color: #dd2c00;
+    color: 0;
+  }
+}

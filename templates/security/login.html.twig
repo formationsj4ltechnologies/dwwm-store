@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ titre_page }}{% endblock %}
+
+{% block body %}
+
+    {{ parent() }}
+    {{ include('security/_login.html.twig') }}
+
+{% endblock %}

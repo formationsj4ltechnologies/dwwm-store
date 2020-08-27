@@ -5,6 +5,26 @@
 {% block body %}
     {{ parent() }}
 
+    {# Header #}
+    {{ include('partials/_header.html.twig') }}
+    {# Fin Header #}
+
+    {# Slider #}
+    {{ include('partials/_slider.html.twig') }}
+    {# Fin Slider #}
+
+    {# Small Banner #}
+    {{ include('partials/_small_banner.html.twig') }}
+    {# Fin Small Banner #}
+
+    {# Produits #}
+    {{ include('partials/_produits.html.twig') }}
+    {# Fin Produits #}
+
+    {# Midium Banner #}
+    {{ include('partials/_midium_banner.html.twig') }}
+    {# Fin Midium Banner #}
+
     <!-- Start Most Popular -->
     <div class="product-area most-popular section">
         <div class="container">

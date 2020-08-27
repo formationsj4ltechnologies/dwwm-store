@@ -2,4 +2,24 @@
   background-color: #efebe9;
 }
 
+.contact-us .form-main {
+  padding: 0;
+}
+.contact-us .form-main h4 {
+  padding: 2rem 0;
+  background: #212121;
+  color: white;
+  text-transform: uppercase;
+}
+.contact-us .form-main form {
+  padding: 1rem 3rem 2rem;
+}
+
+.contact-head .alert {
+  border-radius: 0;
+}
+.contact-head .alert-danger {
+  color: 0;
+}
+
 /*# sourceMappingURL=app.css.map */

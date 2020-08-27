@@ -3600,9 +3600,9 @@ default:"number"===typeof h&&k.flexAnimate(h,!0)}}})(jQuery);
 		},
 
 		scrollChange: function() {
-			var windowTop = this.$win.scrollTop();
-			var position = this.getSection(windowTop);
-			var $parent;
+			let windowTop = this.$win.scrollTop();
+			let position = this.getSection(windowTop);
+			let $parent;
 
 			//If the position is set
 			if(position !== null) {
@@ -3858,8 +3858,8 @@ Version:1.0
 		/*====================================
 		  Cart Plus Minus Button
 		======================================*/
-		var CartPlusMinus = $('.cart-plus-minus');
-		CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
+         let CartPlusMinus = $('.cart-plus-minus');
+         CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
 		CartPlusMinus.append('<div class="inc qtybutton">+</div>');
 		$(".qtybutton").on("click", function() {
 			var $button = $(this);
@@ -3881,8 +3881,8 @@ Version:1.0
 		  Extra Scroll JS
 		=========================*/
 		$('.scroll').on("click", function (e) {
-			var anchor = $(this);
-				$('html, body').stop().animate({
+            let anchor = $(this);
+            $('html, body').stop().animate({
 					scrollTop: $(anchor.attr('href')).offset().top - 0
 				}, 900);
 			e.preventDefault();
@@ -3903,9 +3903,9 @@ Version:1.0
 		 12. Product page Quantity Counter
 		 ===================================*/
 		$('.qty-box .quantity-right-plus').on('click', function () {
-			var $qty = $('.qty-box .input-number');
-			var currentVal = parseInt($qty.val(), 10);
-			if (!isNaN(currentVal)) {
+            let $qty = $('.qty-box .input-number');
+            let currentVal = parseInt($qty.val(), 10);
+            if (!isNaN(currentVal)) {
 				$qty.val(currentVal + 1);
 			}
 		});
