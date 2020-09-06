@@ -2,12 +2,17 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\CommandeRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ * @ApiResource(
+ *     normalizationContext={"groups"={"commande_listing:read"}}
+ * )
  * @ORM\Entity(repositoryClass=CommandeRepository::class)
  */
 class Commande
@@ -16,36 +21,43 @@ class Commande
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"commande_listing:read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"commande_listing:read"})
      */
     private $numero;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"commande_listing:read"})
      */
     private $total;
 
     /**
      * @ORM\Column(type="boolean")
+     * @Groups({"commande_listing:read"})
      */
     private $statut;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Groups({"commande_listing:read"})
      */
     private $createdAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"commande_listing:read"})
      */
     private $updatedAt;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"commande_listing:read"})
      */
     private $deletedAt;
 
@@ -57,6 +69,7 @@ class Commande
     /**
      * @ORM\ManyToOne(targetEntity=Adresse::class)
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"commande_listing:read"})
      */
     private $adresse;
 

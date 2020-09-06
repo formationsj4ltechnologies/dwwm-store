@@ -5,3 +5,7 @@ vich_uploader:
         product_image:
             uri_prefix: /assets/img/produits
             upload_destination: '%kernel.project_dir%/public/assets/img/produits'
+
+        pieces_jointes:
+            uri_prefix: /assets/img/produits
+            upload_destination: '%kernel.project_dir%/public/assets/img/produits'

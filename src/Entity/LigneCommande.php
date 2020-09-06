@@ -2,8 +2,10 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiResource;
 use App\Repository\LigneCommandeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass=LigneCommandeRepository::class)
@@ -38,6 +40,17 @@ class LigneCommande
      * @ORM\JoinColumn(nullable=false)
      */
     private $produit;
+
+    /**
+     * LigneCommande constructor.
+     * @param $quantite
+     * @param $produit
+     */
+    public function __construct($quantite, $produit)
+    {
+        $this->quantite = $quantite;
+        $this->produit = $produit;
+    }
 
     public function getId(): ?int
     {
@@ -90,5 +103,10 @@ class LigneCommande
         $this->produit = $produit;
 
         return $this;
+    }
+
+    public function getSousTotal()
+    {
+        return $this->quantite * $this->getProduit()->getPrix();
     }
 }

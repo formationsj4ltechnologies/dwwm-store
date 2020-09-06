@@ -1,69 +1,36 @@
-
-<!-- Start Login -->
-<section id="contact-us" class="contact-us section">
-    <div class="container">
-        <div class="contact-head">
-            <div class="row">
-                <div class="col-lg-3 col-12"></div>
-                <div class="col-lg-6 col-12">
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-                    <div class="form-main">
-                        <div class="title">
-                            <h4 class="text-center">Entrez vos infos de connexion puis validez</h4>
-                        </div>
-                        <form class="form" method="post">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label for="email">Votre email<span>*</span></label>
-                                        <input id="email" name="email" required autofocus value="{{ last_username }}"
-                                               type="email" placeholder="Entrez ici votre email"/>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label for="mdp">Votre mot de passe</label>
-                                        <input id="mdp" name="password" type="password"
-                                               placeholder="Entrez ici votre mot de passe"/>
-                                    </div>
-                                </div>
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-                                <div class="col-12">
-                                    <div class="form-group button">
-                                        <button type="submit" class="btn ">Valider</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+<!--DEBUT PAGE LOGIN-->
+<main class="page-main">
+    <section class="clean-block clean-form dark">
+        <div class="container">
+            <section class="titrePage">Page de login</section>
+            {% if error %}
+                <div class="app-form-errors alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <div class="app-form">
+                <div class="app-form-titre">formulaire de connexion</div>
+                <form method="post">
+                    <div class="form-group">
+                        <input class="form-control item" type="email" autofocus
+                               placeholder="Entrez votre identifiant au format @mail"
+                               name="email" value="{{ last_username }}" autocomplete="off"
+                               required/>
                     </div>
-                </div>
-                <div class="col-lg-3 col-12"></div>
+                    <div class="form-group">
+                        <input class="form-control" type="password"
+                               placeholder="Entrez votre mot de passe de connexion"
+                               name="password"/>
+                    </div>
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
+                    <button class="btn btn-login btn-block" type="submit">se connecter</button>
+                </form>
             </div>
+
         </div>
-    </div>
-</section>
-<!--/ Fin Login -->
+    </section>
+</main>
+<!--FIN PAGE LOGIN-->
 
 
-{#        {% if app.user %}#}
-{#            <div class="mb-3">#}
-{#                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>#}
-{#            </div>#}
-{#        {% endif %}#}
-
-
-        {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-        #}
 
 
 
