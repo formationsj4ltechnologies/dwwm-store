@@ -156,7 +156,6 @@ class Categorie
             $this->produits[] = $produit;
             $produit->setCategorie($this);
         }
-
         return $this;
     }
 

@@ -120,9 +120,10 @@ class AppService
         $panier = $this->session->get('panier', []);
         $contenuDuPanier = [];
         foreach ($panier as $id => $quantite) {
-            $ldc = new LigneCommande($quantite, $this->produitRepository->find($id));
+            $produit = $this->produitRepository->find($id);
             $contenuDuPanier[] = [
-                "ligne_cmd" => $ldc
+                "quantite" => $quantite,
+                "produit" => $produit
             ];
         }
         return $contenuDuPanier;
@@ -137,6 +138,19 @@ class AppService
         $panier = $this->session->get('panier', []);
         if (!empty($panier[$id])) {
             unset($panier[$id]);
+        }
+        $this->session->set('panier', $panier);
+    }
+
+    /**
+     * Permet de diminuer la quantité d'un produit du panier
+     * @param int $id
+     */
+    public function diminuerQtePanier(int $id)
+    {
+        $panier = $this->session->get('panier', []);
+        if (!empty($panier[$id])) {
+            $panier[$id]--;
         }
         $this->session->set('panier', $panier);
     }

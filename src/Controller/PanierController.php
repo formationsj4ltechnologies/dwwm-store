@@ -23,7 +23,7 @@ class PanierController extends AbstractController
     public function index(AppService $service)
     {
         $contenuPanier = $service->contenuDuPanier();
-        return $this->json(["panier" => $contenuPanier]);
+        return $this->json($contenuPanier);
     }
 
     /**
@@ -35,6 +35,18 @@ class PanierController extends AbstractController
     public function ajouter(int $id, AppService $service)
     {
         $service->ajouterAuPanier($id);
+        return $this->redirectToRoute("panier_contenu");
+    }
+
+    /**
+     * @Route("/diminuer/{id}", name="diminuer")
+     * @param int $id
+     * @param AppService $service
+     * @return RedirectResponse
+     */
+    public function diminuer(int $id, AppService $service)
+    {
+        $service->diminuerQtePanier($id);
         return $this->redirectToRoute("panier_contenu");
     }
 

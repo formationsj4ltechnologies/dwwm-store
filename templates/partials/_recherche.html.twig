@@ -20,12 +20,21 @@
         </div>
     </div>
     <div class="top-recherche-droite">
-        <div class="dropdown">
+        <div class="dropdown js-contenu-panier">
             <span class="dropbtn"><i class="fas fa-cart-arrow-down"></i>(0)</span>
             <div class="dropdown-content">
-                <a href="#">Link 1</a>
-                <a href="#">Link 2</a>
-                <a href="#">Link 3</a>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col" colspan="2">Produit</th>
+                        <th scope="col">PU</th>
+                        <th scope="col">Quantité</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="contenu-panier">
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
