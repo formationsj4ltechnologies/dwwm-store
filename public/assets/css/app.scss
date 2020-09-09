@@ -152,7 +152,7 @@
 
   .top-recherche-centre {
     margin: 0 auto;
-    width: 60%;
+    width: 40%;
 
     select {
       width: 20%;
@@ -174,20 +174,15 @@
   }
 
   .top-recherche-droite {
-    width: 20%;
     margin: 0 auto;
     text-align: center;
 
-    span {
+    i {
       color: #006064;
-      font-size: 1.2rem;
+      font-size: 2rem;
 
-      i {
-        font-size: 2rem;
-
-        &:hover {
-          color: #26a69a;;
-        }
+      &:hover {
+        color: #26a69a;
       }
     }
   }
@@ -372,6 +367,58 @@
 .dropdown:hover .dropbtn {
 }
 
+.js-contenu-panier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > div {
+    margin: 1rem;
+    padding: .5rem;
+  }
+
+
+  .panier-description-produit {
+    display: flex;
+    flex-flow: nowrap row;
+    align-items: center;
+    text-align: center;
+
+    & > div {
+      margin: 1rem;
+
+      .panier-img-produit {
+
+      }
+    }
+
+
+  }
+
+  font-size: 1rem;
+
+  .panier-actions {
+    text-align: center;
+  }
+
+  .panier-supprimer-produit {
+    color: red;
+  }
+}
+
+.panier-titre-prix {
+  .panier-nom-produit {
+    font-family: 'Eczar', serif;
+    font-size: .9rem;
+  }
+
+  .panier-prix-produit {
+    display: inline-block;
+    padding-top: .7rem;
+  }
+}
+
+
 //FIN MON PANIER DROPDOWN
 
 //PIED DE PAGE
@@ -440,3 +487,27 @@
 }
 
 //FIN RESPONSIVE
+.corps-panier {
+  width: 700px;
+
+  .panier-nom-produit {
+    padding-top: .7rem;
+    font-family: 'Eczar', serif;
+    font-size: .9rem;
+  }
+
+  .panier-prix-produit {
+    display: inline-block;
+    padding-top: .7rem;
+  }
+
+  .img-produit {
+    padding: 0.25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 0;
+    max-width: 100%;
+    height: auto;
+  }
+
+}

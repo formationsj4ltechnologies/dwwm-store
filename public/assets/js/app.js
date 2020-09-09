@@ -17,14 +17,19 @@ $(document).ready(function () {
             url: "/panier/",
             method: "GET"
         }).done(function (datas) {
-            $("#contenu-panier").empty();
             const imagePath = 'assets/img/produits'
+            $("#contenu-panier").empty();
             datas.forEach(function (ligne) {
-                    $("#contenu-panier").append(
-                        `<div></div>`
-                    );
-                }
-            );
+                $("#contenu-panier").append(
+                    `<tr>`
+                    + `<td>`
+                    + `<img src="${imagePath}/${ligne.produit.imageName}" alt="" width="80"></td>`
+                    + `<td class="panier-nom-produit">${ligne.produit.nom}</td>`
+                    + `<td class="panier-prix-produit">${ligne.produit.prix} € </td>`
+
+                    + '</tr>'
+                );
+            })
         });
     });
 })
