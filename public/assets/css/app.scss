@@ -253,8 +253,10 @@
         }
       }
 
-      img {
-        width: 100%;
+      .titre-produit {
+        span {
+          color: #0B7FC7;
+        }
       }
 
       .nom-produit {
@@ -377,7 +379,6 @@
     padding: .5rem;
   }
 
-
   .panier-description-produit {
     display: flex;
     flex-flow: nowrap row;
@@ -417,7 +418,6 @@
     padding-top: .7rem;
   }
 }
-
 
 //FIN MON PANIER DROPDOWN
 
@@ -487,6 +487,7 @@
 }
 
 //FIN RESPONSIVE
+
 .corps-panier {
   width: 700px;
 
@@ -509,5 +510,5 @@
     max-width: 100%;
     height: auto;
   }
-
 }
+

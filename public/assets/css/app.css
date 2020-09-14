@@ -199,8 +199,8 @@
   color: #005cbf;
   font-style: italic;
 }
-.page-main .page-catalogue-contenu .produit-item img {
-  width: 100%;
+.page-main .page-catalogue-contenu .produit-item .titre-produit span {
+  color: #0B7FC7;
 }
 .page-main .page-catalogue-contenu .produit-item .nom-produit {
   color: #00695c;

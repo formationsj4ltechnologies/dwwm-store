@@ -31,9 +31,12 @@
             {% for produit in produits %}
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="produit-item">
+                        <div class="titre-produit">
+                            <span>{{ produit.marque.nom }}</span>
+                        </div>
                         <div class="image">
                             <a href="#">
-                                <img class="img-fluid" src="{{ produit.imageUrl }}" alt="">
+                                <img class="img-fluid" src="{{ produit.imageUrl }}" alt="{{ produit.slug }}">
                             </a>
                         </div>
                         <div class="nom-produit">
